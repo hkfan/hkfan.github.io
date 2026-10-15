@@ -5,16 +5,10 @@
 Liquid is a templating language
 
 ### object
-Objects tell Liquid to output predefined variables as content on a page. Use double curly braces for objects: 
-``
-{{ and }}
-```
+Objects tell Liquid to output predefined variables as content on a page. Use double curly braces for objects: {% raw %}{{ and }}{% endraw %}
 
 ### tags
-Tags define the logic and control flow for templates. Use curly braces and percent signs for tags: 
-```
-{% and %}
-```
+Tags define the logic and control flow for templates. Use curly braces and percent signs for tags: {% raw %}{% and %}{% endraw %}
 
 ### filters
 Filters change the output of a Liquid object. They are used within an output and are separated by a |.
@@ -67,12 +61,16 @@ Same as layout but in different folder with the name _includes
 
 Use include
 ```
+{% raw %}
 {% include navigation.html %}
 {{ content }}
+{% endraw %}
 ```
 
 ```
+{% raw %}
 {% if page.url == "/" %}style="color: red;"{% endif %}
+{% endraw %}
 ```
 
 # Data Files
@@ -90,11 +88,13 @@ To use it
 site.data.navigation
 ```
 <nav>
+  {% raw %}
   {% for item in site.data.navigation %}
     <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
       {{ item.name }}
     </a>
   {% endfor %}
+  {% endraw %}
 </nav>
 ```
 
@@ -152,12 +152,14 @@ title: Blog
 <h1>Latest Posts</h1>
 
 <ul>
+  {% raw %}
   {% for post in site.posts %}
     <li>
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       {{ post.excerpt }}
     </li>
   {% endfor %}
+  {% endraw %}
 </ul>
 ```
 
