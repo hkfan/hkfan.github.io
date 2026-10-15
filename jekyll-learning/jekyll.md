@@ -5,10 +5,16 @@
 Liquid is a templating language
 
 ### object
-Objects tell Liquid to output predefined variables as content on a page. Use double curly braces for objects: {{ and }}.
+Objects tell Liquid to output predefined variables as content on a page. Use double curly braces for objects: 
+``
+{{ and }}
+```
 
 ### tags
-Tags define the logic and control flow for templates. Use curly braces and percent signs for tags: {% and %}.
+Tags define the logic and control flow for templates. Use curly braces and percent signs for tags: 
+```
+{% and %}
+```
 
 ### filters
 Filters change the output of a Liquid object. They are used within an output and are separated by a |.
